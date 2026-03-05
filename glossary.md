@@ -32,6 +32,8 @@
 | **RegistryBasedMatcher** | Реализация IProjectMatcher через ProjectRegistry |
 | **Pipeline Stage** | Этап обработки в конвейере (IPipelineStage) |
 | **PipelineContext** | Контейнер данных, передаваемый между стадиями pipeline |
+| **ProjectTypeMarginRow** | Строка таблицы маржи по типам: тип проекта, словарь {год → сумма маржи}, итого |
+| **DisplayProjectName** | Поле в моделях расхождений (напр. PLDiscrepancy). Оригинальное имя проекта для вывода пользователю (вместо нормализованного) |
 
 ## Источники данных (листы Google Sheets)
 

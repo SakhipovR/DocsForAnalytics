@@ -1,0 +1,27 @@
+{
+  "lastProcessedCommits": {
+    "AnalyticsTC": "56c2c213cb4ad2c60070d62e5abc846296a13595",
+    "First": "7f16aa0c2e00fda7c1bc6365c5404874a4278d86"
+  },
+  "history": [
+    {
+      "timestamp": "2026-03-05T00:00:00Z",
+      "action": "delta",
+      "description": "Инициализация state-файла. Обработана дельта AnalyticsTC: обновлены relationships.md (добавлен 3-уровневый fallback ProjectDateCalculationService, детализирован ProjectTypeMarginService с годовой разбивкой и связью с ProjectMetadata/ProjectRegistry), обновлён glossary.md (добавлены термины ProjectTypeMarginRow, DisplayProjectName).",
+      "filesChanged": [
+        "relationships.md",
+        "glossary.md",
+        ".docs-state.json"
+      ],
+      "processedCommits": {
+        "AnalyticsTC": [
+          "56c2c21 - Feat: Добавить таблицу маржинальности по типам проектов по годам",
+          "3e60a0d - Fix: Определять даты Старт/Конец проекта из P&L при отсутствии данных",
+          "6b793fc - Fix: Показывать оригинальные имена в консольном выводе расхождений",
+          "27eef54 - Feat: Разделить нормализованные и оригинальные имена (DisplayName)"
+        ]
+      }
+    }
+  ],
+  "improvements": []
+}

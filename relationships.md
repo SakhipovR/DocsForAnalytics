@@ -64,18 +64,30 @@ PLStructure + TotalIncomes + PaymentData + MonthlyExpenseData
 | Валидация P&L | PLValidationService | Внутренняя согласованность P&L |
 | Метаданные проектов | ProjectsMetadataVerificationStage | Полнота полей и наличие новых проектов |
 
-### 4. Аналитика
+### 4. Расчёт дат проектов (3-уровневый fallback)
 
 ```
-ProjectProfitData + ProjectMetadata
+ProjectDateCalculationService.Calculate()
+  1. Расходы (MonthlyExpenseData)  → даты старта/конца по месяцам расходов
+  2. Доходы (TotalIncomes)         → даты по операциям зачисления (если нет расходов)
+  3. P&L (ProjectProfitData)       → даты из MonthlyData с ненулевыми суммами (если нет 1 и 2)
+```
+
+### 5. Аналитика
+
+```
+ProjectProfitData + ProjectMetadata + ProjectRegistry
         |
         v
-  ├── CustomerMarginService      → Маржинальность по клиентам
-  ├── ProjectTypeMarginService   → Маржинальность по типам проектов
-  └── ExpensePLComparisonService → Постоянные vs проектные расходы
+  ├── CustomerMarginService        → Маржинальность по клиентам
+  ├── ProjectTypeMarginService     → Таблица маржи по типам проектов и годам
+  │     ↑ ProjectMetadata.ProjectType + StartPeriod (год)
+  │     ↑ ProjectRegistry (canonical name → связка с P&L)
+  │     → ProjectTypeMarginRow[] (строки: тип проекта, колонки: годы, значения: сумма маржи)
+  └── ExpensePLComparisonService   → Постоянные vs проектные расходы
 ```
 
-### 5. Экспорт
+### 6. Экспорт
 
 ```
 Результаты аналитики
