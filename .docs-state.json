@@ -33,6 +33,16 @@
         "README.md",
         ".docs-state.json"
       ]
+    },
+    {
+      "timestamp": "2026-03-05T00:02:00Z",
+      "type": "Добавь архитектурное решение и обоснование",
+      "description": "Создан decisions.md с 5 ADR: Union-Find кластеризация, два оркестратора, Strategy для источников, Template Method для парсеров, SemaphoreSlim для блокировки. Добавлена ссылка в README.md.",
+      "filesChanged": [
+        "decisions.md",
+        "README.md",
+        ".docs-state.json"
+      ]
     }
   ]
 }
