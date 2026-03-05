@@ -23,5 +23,16 @@
       }
     }
   ],
-  "improvements": []
+  "improvements": [
+    {
+      "timestamp": "2026-03-05T00:01:00Z",
+      "type": "Опиши новый сквозной сценарий",
+      "description": "Создан scenarios.md с подробным сценарием 'Обнаружение и синхронизация нового проекта' — от появления в финансовых данных до записи в Google Sheets. Добавлена ссылка в README.md.",
+      "filesChanged": [
+        "scenarios.md",
+        "README.md",
+        ".docs-state.json"
+      ]
+    }
+  ]
 }
