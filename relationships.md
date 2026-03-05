@@ -53,7 +53,7 @@ PLStructure + TotalIncomes + PaymentData + MonthlyExpenseData
 Проблема: один проект может иметь разные названия в разных источниках.
 Решение: `NameCleaningService` нормализует имена, `ProjectRegistry` группирует варианты через Union-Find.
 
-### 3. Верификация (5 проверок)
+### 3. Верификация (6 проверок)
 
 | Проверка | Сервис | Что сравнивает |
 |----------|--------|----------------|
@@ -62,6 +62,7 @@ PLStructure + TotalIncomes + PaymentData + MonthlyExpenseData
 | Клиенты: Доходы vs Факт | PLClientsCompatibilityVerifier | Клиенты из Доходов есть ли в P&L |
 | Расхождения доходов | IncomeDiscrepancyVerifier | Суммы доходов совпадают ли |
 | Валидация P&L | PLValidationService | Внутренняя согласованность P&L |
+| Метаданные проектов | ProjectsMetadataVerificationStage | Полнота полей и наличие новых проектов |
 
 ### 4. Аналитика
 
@@ -88,7 +89,7 @@ ProjectProfitData + ProjectMetadata
 ## Два оркестратора
 
 ### RunAnalytics (Console)
-- Последовательный pipeline из 9 стадий (IPipelineStage)
+- Последовательный pipeline из 10 стадий (IPipelineStage)
 - Каждая стадия в try-catch (продолжение при ошибке)
 - Без сохранения истории
 - Конфигурация из `google-sheets-config.json`

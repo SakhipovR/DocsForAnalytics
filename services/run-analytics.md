@@ -11,7 +11,7 @@
 
 ## Архитектура
 
-Последовательный pipeline из стадий (`IPipelineStage`), каждая выполняется в try-catch.
+Последовательный pipeline из 10 стадий (`IPipelineStage`), каждая выполняется в try-catch.
 Данные передаются через `PipelineContext`.
 
 ## PipelineContext
@@ -64,13 +64,18 @@
 - Общий период данных через PeriodCalculationService
 - Топ-5 расхождений
 
-### 8. ProjectsSyncStage - "Синхронизация проектов"
+### 8. ProjectsMetadataVerificationStage - "Проверка метаданных проектов"
+- Проверяет полноту метаданных проектов (ProjectMetadata)
+- Находит проекты с отсутствующими полями (тип, менеджер, даты)
+- Определяет новые проекты без записи в листе "Проекты"
+
+### 9. ProjectsSyncStage - "Синхронизация проектов"
 - Загрузка существующих проектов из Google Sheets
 - Определение недостающих проектов из ProjectRegistry
 - Предзаполнение данных (клиент, даты)
 - Запись новых проектов в Google Sheets
 
-### 9. HighlightStage - "Подсветка в Excel"
+### 10. HighlightStage - "Подсветка в Excel"
 - `output_incomes_highlighted.xlsx` - красная подсветка доходов
 - `output_fact_highlighted.xlsx` - жёлтая подсветка в Факте
 

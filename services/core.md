@@ -127,7 +127,7 @@ BusinessAnalytics.Core/
 
 | Сервис | Описание |
 |--------|----------|
-| `CustomerMarginService` | Маржинальность по клиентам. Profitability% и MarginScore |
+| `CustomerMarginService` | Маржинальность по клиентам. Profitability%, MarginScore, AggregateClientMonthlyDetails(), GetClientDisplayNames() |
 | `ProjectTypeMarginService` | Маржинальность по типам проектов с разбором по годам |
 | `PLValidationService` | Валидация P&L: сравнение с Incomes/Expenses |
 | `ExpensePLComparisonService` | Разделение расходов на постоянные и проектные |
