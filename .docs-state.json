@@ -43,6 +43,16 @@
         "README.md",
         ".docs-state.json"
       ]
+    },
+    {
+      "timestamp": "2026-03-05T00:03:00Z",
+      "type": "Опиши зависимости и версии",
+      "description": "Создан dependencies.md: матрица NuGet-пакетов по проектам, версии, тестовые фреймворки, примечания о расхождениях версий. Добавлена ссылка в README.md.",
+      "filesChanged": [
+        "dependencies.md",
+        "README.md",
+        ".docs-state.json"
+      ]
     }
   ]
 }
